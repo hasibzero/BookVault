@@ -14,15 +14,14 @@ export default function LoginPage() {
     const password = e.target.password.value;
 
     const { data, error } = await authClient.signIn.email({
-        email, // user email address
-        password, // user password -> min 8 characters by default
-        callbackURL: "/" // A URL to redirect to after the user verifies their email (optional)
+        email, 
+        password, 
+        callbackURL: "/",
     });
     console.log(data, error);
     if (error) {
       setErrorMsg(error.message || "The email or password you entered is incorrect.");
     } else {
-      // If successful, redirect them! (Change "/profile" to wherever they should go)
       router.push("/profile");
       router.refresh();
     }
@@ -34,10 +33,8 @@ export default function LoginPage() {
     console.log(data, error);
   }
   
-  // States for UI functionality
   const [showPassword, setShowPassword] = useState(false);
   
-  // Set this to false to hide the error banner in your actual app
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-[#f4f7f9] p-4 font-sans">
@@ -50,16 +47,14 @@ export default function LoginPage() {
           <div>
             <h3 className="text-sm font-bold text-[#991b1b]">Authentication Failed</h3>
             <p className="text-sm text-[#b91c1c] mt-1">
-              {errorMsg} {/* Injects the real error message here */}
+              {errorMsg} 
             </p>
           </div>
         </div>
       )}
 
-      {/* Login Card Container */}
       <div className="w-full max-w-[440px] bg-white rounded-2xl shadow-xl p-8 md:p-10">
         
-        {/* Header Section */}
         <div className="text-center mb-8">
           <h1 className="text-3xl font-serif font-bold text-gray-900 mb-2">
             Welcome Back
@@ -69,10 +64,8 @@ export default function LoginPage() {
           </p>
         </div>
 
-        {/* Login Form */}
         <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
           
-          {/* Email Address Input */}
           <div>
             <label className="block text-sm font-bold text-gray-800 mb-1.5">
               Email Address
@@ -94,7 +87,6 @@ export default function LoginPage() {
             </div>
           </div>
 
-          {/* Password Input */}
           <div>
             <div className="flex items-center justify-between mb-1.5">
               <label className="block text-sm font-bold text-gray-800">
@@ -121,7 +113,6 @@ export default function LoginPage() {
                 required
               />
               
-              {/* Toggle Password Visibility Button */}
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
@@ -143,7 +134,6 @@ export default function LoginPage() {
             </div>
           </div>
 
-          {/* Login Button */}
           <button 
             type="submit" 
             className="w-full mt-2 bg-[#ba5224] hover:bg-[#9d4320] text-white font-bold py-3 rounded-lg text-sm transition-colors duration-200 flex items-center justify-center gap-2 shadow-sm"

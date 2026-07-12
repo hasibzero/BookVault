@@ -8,6 +8,8 @@ import { useState } from 'react';
 export default function RegisterPage() {
 const router = useRouter();
 const [emailError, setEmailError] = useState("");
+const [showPassword, setShowPassword] = useState(false);
+
  const handleSubmit = async(e) => {
     e.preventDefault();
     setEmailError("");
@@ -19,11 +21,11 @@ const [emailError, setEmailError] = useState("");
     const image = e.target.profilePhotoUrl.value;
 
     const { data, error } = await authClient.signUp.email({
-        email, // user email address
-        password, // user password -> min 8 characters by default
-        name, // user display name
-        image, // User image URL (optional)
-        callbackURL:"/login"// A URL to redirect to after the user verifies their email (optional)
+        email, 
+        password, 
+        name, 
+        image, 
+        callbackURL:"/login"
     });
     
     
@@ -35,7 +37,6 @@ const [emailError, setEmailError] = useState("");
       if (error.code === "USER_ALREADY_EXISTS_USE_ANOTHER_EMAIL") {
         setEmailError(error.message); // This will set it to "User already exists..."
       } else {
-        // Handle other general errors
       }
     }
   }
@@ -50,10 +51,8 @@ const [emailError, setEmailError] = useState("");
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#f4f7f9] p-4 font-sans">
       
-      {/* Card Container */}
       <div className="w-full max-w-[440px] bg-white rounded-2xl shadow-xl p-8 md:p-10">
         
-        {/* Header Section */}
         <div className="text-center mb-8">
           <h1 className="text-3xl font-serif font-bold text-gray-900 mb-2">
             Create Your Account
@@ -63,10 +62,8 @@ const [emailError, setEmailError] = useState("");
           </p>
         </div>
 
-        {/* Registration Form */}
         <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
           
-          {/* Full Name Input */}
           <div>
             <label className="block text-sm font-bold text-gray-800 mb-1.5">
               Full Name
@@ -88,7 +85,6 @@ const [emailError, setEmailError] = useState("");
             </div>
           </div>
 
-          {/* Email Address Input */}
           <div>
             <label className="block text-sm font-bold text-gray-800 mb-1.5">
               Email Address
@@ -115,7 +111,6 @@ const [emailError, setEmailError] = useState("");
             </p>
           )}
 
-          {/* Profile Photo URL Input */}
           <div>
             <label className="block text-sm font-bold text-gray-800 mb-1.5">
               Profile Photo URL (Optional)
@@ -136,7 +131,6 @@ const [emailError, setEmailError] = useState("");
             </div>
           </div>
 
-          {/* Password Input */}
           <div>
             <label className="block text-sm font-bold text-gray-800 mb-1.5">
               Password
@@ -149,12 +143,29 @@ const [emailError, setEmailError] = useState("");
                 </svg>
               </div>
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 name="password"
                 placeholder="••••••••"
-                className="w-full pl-10 pr-4 py-2.5 bg-[#f8fafc] border border-gray-200 rounded-lg text-sm text-gray-800 placeholder-gray-400 tracking-widest focus:outline-none focus:ring-2 focus:ring-[#9d4320] focus:border-transparent transition-all"
+                className="w-full pl-10 pr-10 py-2.5 bg-[#f8fafc] border border-gray-200 rounded-lg text-sm text-gray-800 placeholder-gray-400 tracking-widest focus:outline-none focus:ring-2 focus:ring-[#ba5224] focus:border-transparent transition-all"
                 required
               />
+              
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600 focus:outline-none"
+              >
+                {showPassword ? (
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
+                  </svg>
+                ) : (
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
+                )}
+              </button>
             </div>
           </div>
 
