@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { authClient } from '@/lib/auth-client';
 import { useRouter } from 'next/navigation';
 
-export default async function LoginPage() {
+export default function LoginPage() {
     const [errorMsg, setErrorMsg] = useState("");
     const router = useRouter();
     const userData = authClient.useSession();
@@ -15,7 +15,7 @@ export default async function LoginPage() {
       router.push("/profile");
     }
   }, [user, router]);
-  
+
     const handleSubmit = async(e) => {
     e.preventDefault();
     setErrorMsg("");
