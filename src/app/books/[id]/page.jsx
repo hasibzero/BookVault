@@ -1,7 +1,17 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-
+import { Toast, Button, toast } from '@heroui/react';
+function Toast() {
+  return (
+    <div>
+      <Toast.Provider />
+      <Button onPress={() => toast("Simple message")}>
+        Show toast
+      </Button>
+    </div>
+  );
+}
 const BookDetailsPage = async ({params}) => {
   const { id } = await params;
   const pageId = Number(id);
@@ -117,7 +127,7 @@ const BookDetailsPage = async ({params}) => {
                   Available Quantity: {book.available_quantity} copies left
                 </div>
               </div>
-              <button className="w-full sm:w-auto bg-[#c85a2f] hover:bg-[#b04a23] text-white px-6 py-3 rounded-md font-bold transition-colors flex items-center justify-center">
+              <button onClick={Toast} className="w-full sm:w-auto bg-[#c85a2f] hover:bg-[#b04a23] text-white px-6 py-3 rounded-md font-bold transition-colors flex items-center justify-center">
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                 </svg>

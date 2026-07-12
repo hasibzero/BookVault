@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { authClient } from '@/lib/auth-client';
 
-export default function LoginPage() {
+export default async function LoginPage() {
     const [errorMsg, setErrorMsg] = useState("");
     const handleSubmit = async(e) => {
     e.preventDefault();
@@ -25,6 +25,7 @@ export default function LoginPage() {
       router.push("/profile");
       router.refresh();
     }
+    
   }
   const handleGoogleSignIn = async () => {
     const data = await authClient.signIn.social({
@@ -32,7 +33,9 @@ export default function LoginPage() {
   });
     console.log(data, error);
   }
+
   
+
   const [showPassword, setShowPassword] = useState(false);
   
 

@@ -4,7 +4,6 @@ import Link from 'next/link';
 import logo from "@/assests/bookvault_logo.png"; 
 import { usePathname, useRouter } from 'next/navigation';
 import { authClient } from '@/lib/auth-client';
-import { Avatar } from "@/assests/user-avatar.png";
 
 export default function Navbar() {
   const router = useRouter();
@@ -30,11 +29,8 @@ export default function Navbar() {
   return (
     <nav className="w-full flex items-center justify-between px-6 py-4 bg-[#1b2028] text-white shadow-sm">
       
-      {/* Left Section: Logo & Brand Name */}
       <div className="flex items-center gap-3">
-        {/* Logo Placeholder - Replace src with your actual logo asset */}
         <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden">
-          {/* Using a placeholder SVG/Text for the logo circle */}
           <span className="text-slate-800 text-[10px] font-extrabold leading-tight text-center">
             <Image alt='logo' src={logo} width={100} height={100}></Image>
             
@@ -47,7 +43,6 @@ export default function Navbar() {
         </Link>
       </div>
 
-{/* Middle Section: Dynamic Navigation Links */}
       <div className="hidden md:flex items-center gap-8 text-sm font-medium">
         {navLinks.map((link) => {
           const isActive = pathname === link.href;
@@ -64,7 +59,6 @@ export default function Navbar() {
             >
               {link.name}
               
-              {/* Only render the orange underline if the link is active */}
               {isActive && (
                 <span className="absolute left-0 bottom-0 w-full h-[2px] bg-[#b95734]"></span>
               )}
@@ -73,7 +67,6 @@ export default function Navbar() {
         })}
       </div>
 
-      {/* Right Section: User Profile & Actions */}
       {!user && 
         <div>
         <button className="bg-[#b95734] hover:bg-[#9a4729] text-white text-sm font-bold py-2 px-5 rounded-md transition-colors">
@@ -87,7 +80,6 @@ export default function Navbar() {
       Hi, <strong className="text-white font-semibold tracking-wide">{user?.name}</strong>
     </span>
     
-    {/* Profile Image with Fallback */}
     
   {user.image ? (
   <Image
