@@ -158,7 +158,7 @@ export default async function LoginPage() {
         </div>
 
         {/* Google Social Login */}
-        <button onClick={handleGoogleSignIn} className="w-full bg-white border border-gray-200 hover:bg-gray-50 text-gray-800 font-bold py-3 rounded-lg text-sm transition-colors duration-200 flex items-center justify-center gap-3 shadow-sm">
+        <button onClick={handleGoogleSignIn} className="cursor-pointer w-full bg-white border border-gray-200 hover:bg-gray-50 text-gray-800 font-bold py-3 rounded-lg text-sm transition-colors duration-200 flex items-center justify-center gap-3 shadow-sm">
           {/* Google G Logo SVG */}
           <svg className="w-5 h-5" viewBox="0 0 24 24">
             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
