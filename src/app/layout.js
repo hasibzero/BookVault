@@ -33,18 +33,16 @@ export default function RootLayout({ children }) {
         
         <Navbar />
         <ToastProvider 
-                  position="top-right" 
-                  maxVisibleToasts={2}
-                  toastProps={{
-                    timeout: 2500,        // Disappears automatically in 2.5 seconds
-                    radius: "full",       // Small capsule style that doesn't look blocky
-                    variant: "flat",      // Clean, subtle matching color background
-                    shouldShowTimeoutProgress: false, // Removes the distracting loading bar
-                    classNames: {
-                      base: "shadow-md border border-gray-100 backdrop-blur-md bg-white/90 z-[9999] max-w-sm",
-                    }
-                  }} 
-          />
+          placement="top-right" 
+          toastProps={{
+            timeout: 3000, 
+            radius: "md",
+            classNames: {
+              // This guarantees it floats above your navbar and doesn't push layout
+              base: "fixed top-4 right-4 z-[9999] shadow-lg border border-gray-100", 
+            }
+          }} 
+        />
         {children}
         <Footer />
         
