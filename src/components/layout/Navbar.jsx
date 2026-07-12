@@ -1,8 +1,11 @@
+import Image from 'next/image';
 import Link from 'next/link';
+import logo from "@/assests/bookvault_logo.png"; 
+
 
 export default function Navbar() {
   return (
-    <nav className="w-full flex items-center justify-between px-6 py-4 bg-[#1b2028] text-white shadow-sm border-t-2 border-indigo-500">
+    <nav className="w-full flex items-center justify-between px-6 py-4 bg-[#1b2028] text-white shadow-sm">
       
       {/* Left Section: Logo & Brand Name */}
       <div className="flex items-center gap-3">
@@ -10,7 +13,8 @@ export default function Navbar() {
         <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden">
           {/* Using a placeholder SVG/Text for the logo circle */}
           <span className="text-slate-800 text-[10px] font-extrabold leading-tight text-center">
-            BV<br/>Logo
+            <Image alt='logo' src={logo} width={100} height={100}></Image>
+            
           </span>
         </div>
         <Link href="/">
