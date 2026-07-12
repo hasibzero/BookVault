@@ -6,7 +6,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { ToastProvider } from '@heroui/toast';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,11 +30,8 @@ export default function RootLayout({ children }) {
     >
       <body suppressHydrationWarning>
         
-        <Providers>
-          {/* Your navbar, pages, etc. will render inside here */}
-          {children}
-        </Providers>
-        
+        <Navbar />
+        {children}
         <Footer />
         
       </body>
