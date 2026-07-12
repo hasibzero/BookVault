@@ -5,8 +5,10 @@ import Link from 'next/link';
 import { authClient } from '@/lib/auth-client';
 
 export default function LoginPage() {
+    const [errorMsg, setErrorMsg] = useState("");
     const handleSubmit = async(e) => {
     e.preventDefault();
+    setErrorMsg("");
 
     const email = e.target.email.value;
     const password = e.target.password.value;
@@ -14,9 +16,16 @@ export default function LoginPage() {
     const { data, error } = await authClient.signIn.email({
         email, // user email address
         password, // user password -> min 8 characters by default
-        // callbackURL: "" // A URL to redirect to after the user verifies their email (optional)
+        callbackURL: "/" // A URL to redirect to after the user verifies their email (optional)
     });
     console.log(data, error);
+    if (error) {
+      setErrorMsg(error.message || "The email or password you entered is incorrect.");
+    } else {
+      // If successful, redirect them! (Change "/profile" to wherever they should go)
+      router.push("/profile");
+      router.refresh();
+    }
   }
   const handleGoogleSignIn = async () => {
     const data = await authClient.signIn.social({
@@ -24,17 +33,16 @@ export default function LoginPage() {
   });
     console.log(data, error);
   }
+  
   // States for UI functionality
   const [showPassword, setShowPassword] = useState(false);
   
   // Set this to false to hide the error banner in your actual app
-  const [hasError, setHasError] = useState(true); 
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-[#f4f7f9] p-4 font-sans">
       
-      {/* Error Banner (Visible when hasError is true) */}
-      {/* {hasError && (
+      {errorMsg && (
         <div className="w-full max-w-[440px] bg-[#fef2f2] border border-[#fca5a5] rounded-xl p-4 mb-6 flex items-start gap-3 shadow-sm">
           <svg className="w-5 h-5 text-[#dc2626] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -42,11 +50,11 @@ export default function LoginPage() {
           <div>
             <h3 className="text-sm font-bold text-[#991b1b]">Authentication Failed</h3>
             <p className="text-sm text-[#b91c1c] mt-1">
-              The email or password you entered is incorrect. Please try again.
+              {errorMsg} {/* Injects the real error message here */}
             </p>
           </div>
         </div>
-      )} */}
+      )}
 
       {/* Login Card Container */}
       <div className="w-full max-w-[440px] bg-white rounded-2xl shadow-xl p-8 md:p-10">

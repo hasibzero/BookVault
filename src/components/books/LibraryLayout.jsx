@@ -27,7 +27,7 @@ export default function LibraryLayout({ initialBooks }) {
         <Sidebar 
           selectedCategory={selectedCategory} 
           setSelectedCategory={setSelectedCategory} 
-          books={initialBooks} // <--- FIXED THIS LINE
+          books={initialBooks} 
         />
 
         {/* Right Books Grid */}
