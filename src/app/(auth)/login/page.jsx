@@ -3,9 +3,16 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { authClient } from '@/lib/auth-client';
+import { redirect } from 'next/navigation';
 
 export default async function LoginPage() {
     const [errorMsg, setErrorMsg] = useState("");
+    const userData = authClient.useSession();
+   const user = userData?.data?.user;
+   if (user) {
+    redirect("/profile");
+   }
+
     const handleSubmit = async(e) => {
     e.preventDefault();
     setErrorMsg("");
