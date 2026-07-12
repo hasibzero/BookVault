@@ -8,16 +8,13 @@ import { useRouter } from 'next/navigation';
 export default function LoginPage() {
     const [errorMsg, setErrorMsg] = useState("");
     const router = useRouter();
-    const { data: session, isPending } = authClient.useSession();
-
-  useEffect(() => {
-    if (session?.user) {
+    const userData = authClient.useSession();
+   const user = userData?.data?.user;
+   useEffect(() => {
+    if (user) {
       router.push("/profile");
     }
-  }, [session, router]);
-  if (isPending) {
-    return <div className="min-h-screen flex items-center justify-center text-gray-500">Checking authentication...</div>;
-  }
+  }, [user, router]);
 
     const handleSubmit = async(e) => {
     e.preventDefault();
