@@ -31,19 +31,11 @@ export default function RootLayout({ children }) {
     >
       <body suppressHydrationWarning>
         
-        <Navbar />
-        <ToastProvider 
-          placement="top-right" 
-          toastProps={{
-            timeout: 3000, 
-            radius: "md",
-            classNames: {
-              // This guarantees it floats above your navbar and doesn't push layout
-              base: "fixed top-4 right-4 z-[9999] shadow-lg border border-gray-100", 
-            }
-          }} 
-        />
-        {children}
+        <Providers>
+          {/* Your navbar, pages, etc. will render inside here */}
+          {children}
+        </Providers>
+        
         <Footer />
         
       </body>
