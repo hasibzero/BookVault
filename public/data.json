@@ -6,7 +6,7 @@
     "description": "A gripping tale of mystery and survival in the deep woods.",
     "category": "Story",
     "available_quantity": 5,
-    "image_url": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=800"
+    "image_url": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1684784411i/157291560.jpg"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "description": "Mastering the complexities of scalable cloud-native applications.",
     "category": "Tech",
     "available_quantity": 2,
-    "image_url": "https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&q=80&w=800"
+    "image_url": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1628178125i/58700688.jpg"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "description": "An accessible journey through the mind-bending world of quantum physics.",
     "category": "Science",
     "available_quantity": 8,
-    "image_url": "https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&q=80&w=800"
+    "image_url": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1676645398i/113175856.jpg"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "description": "Understanding the genetic blueprint that defines humanity.",
     "category": "Science",
     "available_quantity": 4,
-    "image_url": "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80&w=800"
+    "image_url": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1388195844i/1137064.jpg"
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "description": "Protecting digital assets in an increasingly connected world.",
     "category": "Tech",
     "available_quantity": 3,
-    "image_url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800"
+    "image_url": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1523924373i/39863489.jpg"
   },
   {
     "id": 6,
@@ -51,7 +51,7 @@
     "description": "A collection of ancient stories and folklore from across Asia.",
     "category": "Story",
     "available_quantity": 12,
-    "image_url": "https://images.unsplash.com/photo-1476275466078-4007374efbbe?auto=format&fit=crop&q=80&w=800"
+    "image_url": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1608674516i/56382583.jpg"
   },
   {
     "id": 7,
@@ -60,7 +60,7 @@
     "description": "Deep dive into hooks, patterns, and performance optimization.",
     "category": "Tech",
     "available_quantity": 6,
-    "image_url": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80&w=800"
+    "image_url": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1663188583i/62589574.jpg"
   },
   {
     "id": 8,
@@ -69,7 +69,7 @@
     "description": "A sci-fi classic about the colonization of Mars.",
     "category": "Science",
     "available_quantity": 10,
-    "image_url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"
+    "image_url": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1374049948i/76778.jpg"
   },
   {
     "id": 9,
@@ -78,7 +78,7 @@
     "description": "A masterclass on the techniques and philosophy of storytelling.",
     "category": "Story",
     "available_quantity": 4,
-    "image_url": "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&q=80&w=800"
+    "image_url": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1388266205i/697943.jpg"
   },
   {
     "id": 10,
@@ -87,7 +87,7 @@
     "description": "Making cloud infrastructure easy to understand and implement.",
     "category": "Tech",
     "available_quantity": 7,
-    "image_url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=800"
+    "image_url": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1614777559i/57287968.jpg"
   },
   {
     "id": 11,
@@ -96,7 +96,7 @@
     "description": "A quick and entertaining guide to the cosmos.",
     "category": "Science",
     "available_quantity": 15,
-    "image_url": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&q=80&w=800"
+    "image_url": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1527255595i/32191710.jpg"
   },
   {
     "id": 12,
@@ -105,6 +105,6 @@
     "description": "A magical story about following your dreams and finding your destiny.",
     "category": "Story",
     "available_quantity": 9,
-    "image_url": "https://images.unsplash.com/photo-1543004218-ee141104975a?auto=format&fit=crop&q=80&w=800"
+    "image_url": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1654226003i/18144590.jpg"
   }
 ]
