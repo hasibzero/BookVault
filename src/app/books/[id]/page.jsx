@@ -79,11 +79,11 @@ const BookDetailsPage = async ({params}) => {
             
             {/* Tags */}
             <div className="flex flex-wrap gap-3 mb-6">
-              {book.tags.map((tag) => (
+              {/* {book.tags.map((tag) => (
                 <span key={tag} className="bg-white text-black px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide">
                   {tag}
                 </span>
-              ))}
+              ))} */}
             </div>
 
             {/* Title & Author */}
