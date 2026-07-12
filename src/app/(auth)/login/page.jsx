@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { authClient } from '@/lib/auth-client';
 import { useRouter } from 'next/navigation';
@@ -10,10 +10,12 @@ export default async function LoginPage() {
     const router = useRouter();
     const userData = authClient.useSession();
    const user = userData?.data?.user;
-   if (user) {
-    router.push("/profile");
-   }
-
+   useEffect(() => {
+    if (user) {
+      router.push("/profile");
+    }
+  }, [user, router]);
+  
     const handleSubmit = async(e) => {
     e.preventDefault();
     setErrorMsg("");
