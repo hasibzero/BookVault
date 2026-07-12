@@ -165,4 +165,4 @@ const BookDetailsPage = async ({params}) => {
     </div>
   );
 }
-export default BookDetailsPage
+export default BookDetailsPage;
