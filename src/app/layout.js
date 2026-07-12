@@ -32,7 +32,19 @@ export default function RootLayout({ children }) {
       <body suppressHydrationWarning>
         
         <Navbar />
-        <ToastProvider position="top-right" toastOffset={20} />
+        <ToastProvider 
+                  position="top-right" 
+                  maxVisibleToasts={2}
+                  toastProps={{
+                    timeout: 2500,        // Disappears automatically in 2.5 seconds
+                    radius: "full",       // Small capsule style that doesn't look blocky
+                    variant: "flat",      // Clean, subtle matching color background
+                    shouldShowTimeoutProgress: false, // Removes the distracting loading bar
+                    classNames: {
+                      base: "shadow-md border border-gray-100 backdrop-blur-md bg-white/90 z-[9999] max-w-sm",
+                    }
+                  }} 
+          />
         {children}
         <Footer />
         

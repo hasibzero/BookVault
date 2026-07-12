@@ -6,9 +6,8 @@ export default function BorrowButton() {
   const handleBorrow = () => {
     addToast({
       title: "Success",
-      description: "You have successfully borrowed this book!",
+      description: "Book borrowed successfully.", 
       color: "success",
-      variant: "flat",
     });
   };
 
