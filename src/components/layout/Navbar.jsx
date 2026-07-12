@@ -4,7 +4,7 @@ import Link from 'next/link';
 import logo from "@/assests/bookvault_logo.png"; 
 import { usePathname, useRouter } from 'next/navigation';
 import { authClient } from '@/lib/auth-client';
-
+import { Avatar } from "@/assests/user-avatar.png";
 
 export default function Navbar() {
   const router = useRouter();
@@ -89,13 +89,19 @@ export default function Navbar() {
     
     {/* Profile Image with Fallback */}
     
-      <Image 
-        src={user?.image} 
-        width={42} 
-        height={42} 
-        alt={`${user?.name || 'User'}'s profile`}
-        className="rounded-full object-cover w-[42px] h-[42px] border-2 border-gray-600 shadow-sm"
-      />
+  {user.image ? (
+  <Image
+    src={user.image}
+    width={42}
+    height={42}
+    alt="Profile"
+    className="rounded-full object-cover"
+  />
+) : (
+  <div className="w-[42px] h-[42px] rounded-full bg-gray-700 flex items-center justify-center text-white font-bold text-sm">
+    {user?.name?.charAt(0)?.toUpperCase() || "U"}
+  </div>
+)}
     
   
 

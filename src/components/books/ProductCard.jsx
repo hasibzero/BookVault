@@ -27,11 +27,12 @@ export default function ProductCard({ book }) {
           {book.author}
         </p>
         
-        <button className="mt-auto w-full py-2.5 border border-gray-900 rounded-md text-sm font-bold text-gray-900 hover:bg-gray-900 hover:text-white transition-colors duration-200">
           <Link href={`/books/${book.id}`}>
-          View Details
+            <button className="cursor-pointer mt-auto w-full py-2.5 border border-gray-900 rounded-md text-sm font-bold text-gray-900 hover:bg-gray-900 hover:text-white transition-colors duration-200">
+            View Details
+            </button>
+
           </Link>
-        </button>
       </div>
       
     </div>

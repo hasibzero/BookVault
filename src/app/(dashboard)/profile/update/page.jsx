@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 export default function UpdateInfoPage() {
+  
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
   const handleUpdate = async (e) => {

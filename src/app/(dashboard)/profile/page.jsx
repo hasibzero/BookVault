@@ -2,11 +2,15 @@
 import { authClient } from '@/lib/auth-client';
 import Image from 'next/image';
 import Link from 'next/link';
+import { redirect } from 'next/navigation';
 import React from 'react'
 
 const ProfilePage = () => {
   const userData = authClient.useSession();
      const user = userData?.data?.user;
+     if (!user) {
+      redirect('/login')
+     }
   return (
     <div className="min-h-screen bg-[#f8fafc] flex items-center justify-center p-4 font-sans">
       

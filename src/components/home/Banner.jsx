@@ -19,7 +19,7 @@ export default function Banner() {
           </p>
           
           <Link 
-            href="/browse"
+            href="/books"
             className="inline-flex items-center justify-center gap-2 bg-[#a84724] hover:bg-[#8b3a1d] text-white font-bold py-3.5 px-8 rounded-full transition-colors duration-200 mt-2 shadow-sm"
           >
             Browse Now
