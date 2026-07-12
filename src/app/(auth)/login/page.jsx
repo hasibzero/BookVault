@@ -3,14 +3,15 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { authClient } from '@/lib/auth-client';
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 export default async function LoginPage() {
     const [errorMsg, setErrorMsg] = useState("");
+    const router = useRouter();
     const userData = authClient.useSession();
    const user = userData?.data?.user;
    if (user) {
-    redirect("/profile");
+    router.push("/profile");
    }
 
     const handleSubmit = async(e) => {
