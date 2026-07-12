@@ -1,33 +1,27 @@
-"use client";
+import {Button, toast} from "@heroui/react";
+import React from 'react'
 
-import { Button, toast } from "@heroui/react";
-
-export default function BorrowButton({ availableQuantity }) {
-  
-  const handleBorrow = () => {
-    toast("Success", {
-      description: "You have successfully borrowed this book.",
-      color: "success",
-      variant: "flat",
-      actionProps: {
-        children: "Dismiss",
-        onPress: () => toast.clear(),
-        variant: "light",
-      },
-    });
-  };
-
+export const BorrowButton = () => {
   return (
-    <div className="flex w-full sm:w-auto items-center justify-center">
-      <Button 
-        onPress={handleBorrow}
-        className="w-full sm:w-auto bg-[#c85a2f] hover:bg-[#b04a23] text-white px-6 py-6 rounded-md font-bold shadow-sm"
+     <div className="flex h-full max-w-xl flex-col items-center justify-center">
+      <Button
+        size="sm"
+        variant="secondary"
+        onPress={() => {
+          toast("You have been invited to join a team", {
+            actionProps: {
+              children: "Dismiss",
+              onPress: () => toast.clear(),
+              variant: "tertiary",
+            },
+            description: "Bob sent you an invitation to join HeroUI team",
+            indicator: <Persons />,
+            variant: "default",
+          });
+        }}
       >
-        <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-        </svg>
-        Borrow This Book
+        Show toast
       </Button>
     </div>
-  );
+  )
 }
