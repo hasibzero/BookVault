@@ -1,10 +1,17 @@
 "use client";
 import Link from 'next/link';
 import { authClient } from '../../../lib/auth-client';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
+
 
 export default function RegisterPage() {
+const router = useRouter();
+const [emailError, setEmailError] = useState("");
  const handleSubmit = async(e) => {
     e.preventDefault();
+    setEmailError("");
+    
 
     const name = e.target.name.value;
     const email = e.target.email.value;
@@ -16,11 +23,29 @@ export default function RegisterPage() {
         password, // user password -> min 8 characters by default
         name, // user display name
         profilePhoto, // User image URL (optional)
-        callbackURL: "" // A URL to redirect to after the user verifies their email (optional)
+        callbackURL:"/login"// A URL to redirect to after the user verifies their email (optional)
     });
+    
+    
+    console.log(data, error);
+    if (!error) {
+      router.push('/login');
+    }
+    if (error) {
+      if (error.code === "USER_ALREADY_EXISTS_USE_ANOTHER_EMAIL") {
+        setEmailError(error.message); // This will set it to "User already exists..."
+      } else {
+        // Handle other general errors
+      }
+    }
+  }
+
+  const handleGoogleSignIn = async () => {
+    const data = await authClient.signIn.social({
+    provider: "google",
+  });
     console.log(data, error);
   }
-  
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#f4f7f9] p-4 font-sans">
@@ -84,6 +109,11 @@ export default function RegisterPage() {
               />
             </div>
           </div>
+          {emailError && (
+            <p className="mt-1.5 text-xs font-semibold text-red-500">
+              {emailError}
+            </p>
+          )}
 
           {/* Profile Photo URL Input */}
           <div>
@@ -150,7 +180,7 @@ export default function RegisterPage() {
         </div>
 
         {/* Google Social Login */}
-        <button className="w-full bg-white border border-gray-200 hover:bg-gray-50 text-gray-800 font-bold py-3 rounded-lg text-sm transition-colors duration-200 flex items-center justify-center gap-3 shadow-sm">
+        <button className="w-full bg-white border border-gray-200 hover:bg-gray-50 text-gray-800 font-bold py-3 rounded-lg text-sm transition-colors duration-200 flex items-center justify-center gap-3 shadow-sm" onClick={handleGoogleSignIn}>
           {/* Google G Logo SVG */}
           <svg className="w-5 h-5" viewBox="0 0 24 24">
             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />

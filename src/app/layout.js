@@ -1,11 +1,11 @@
+import dns from 'node:dns';
+dns.setServers(['8.8.8.8', '8.8.4.4']);
+
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import Banner from "@/components/home/Banner";
-import MarqueeContent from "@/components/home/MarqueeContent";
-import FeaturedBooks from "@/components/home/FeaturedBooks.jsx";
-import CommunitySection from "@/components/home/CommunitySection";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

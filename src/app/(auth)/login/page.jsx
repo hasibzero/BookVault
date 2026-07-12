@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { authClient } from '../../../lib/auth-client';
+import { authClient } from '@/lib/auth-client';
 
 export default function LoginPage() {
     const handleSubmit = async(e) => {
@@ -11,11 +11,18 @@ export default function LoginPage() {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    const { data, error } = await authClient.signIn({
+    const { data, error } = await authClient.signIn.email({
         email, // user email address
         password, // user password -> min 8 characters by default
-        callbackURL: "" // A URL to redirect to after the user verifies their email (optional)
+        callbackURL: "/" // A URL to redirect to after the user verifies their email (optional)
     });
+    console.log(data, error);
+  }
+  const handleGoogleSignIn = async () => {
+    const data = await authClient.signIn.social({
+    provider: "google",
+  });
+    console.log(data, error);
   }
   // States for UI functionality
   const [showPassword, setShowPassword] = useState(false);
@@ -55,7 +62,7 @@ export default function LoginPage() {
         </div>
 
         {/* Login Form */}
-        <form className="flex flex-col gap-5" onSubmit={(e) => e.preventDefault()}>
+        <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
           
           {/* Email Address Input */}
           <div>
@@ -150,7 +157,7 @@ export default function LoginPage() {
         </div>
 
         {/* Google Social Login */}
-        <button className="w-full bg-white border border-gray-200 hover:bg-gray-50 text-gray-800 font-bold py-3 rounded-lg text-sm transition-colors duration-200 flex items-center justify-center gap-3 shadow-sm">
+        <button onClick={handleGoogleSignIn} className="w-full bg-white border border-gray-200 hover:bg-gray-50 text-gray-800 font-bold py-3 rounded-lg text-sm transition-colors duration-200 flex items-center justify-center gap-3 shadow-sm">
           {/* Google G Logo SVG */}
           <svg className="w-5 h-5" viewBox="0 0 24 24">
             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
