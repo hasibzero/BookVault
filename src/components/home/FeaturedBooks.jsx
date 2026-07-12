@@ -3,13 +3,10 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
-// Import the new component (adjust the path depending on your folder structure)
 import ProductCard from '@/components/books/ProductCard';
-// Import Swiper React components and modules
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, FreeMode } from 'swiper/modules';
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/free-mode';

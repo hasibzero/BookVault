@@ -1,9 +1,19 @@
+"use client";
 import Image from 'next/image';
 import Link from 'next/link';
 import logo from "@/assests/bookvault_logo.png"; 
+import { usePathname } from 'next/navigation';
 
 
 export default function Navbar() {
+
+  const pathname = usePathname();
+  const navLinks = [
+    { name: 'Home', href: '/' },
+    { name: 'All Books', href: '/books' },
+    { name: 'My Profile', href: '/profile' },
+  ];
+  
   return (
     <nav className="w-full flex items-center justify-between px-6 py-4 bg-[#1b2028] text-white shadow-sm">
       
@@ -24,30 +34,30 @@ export default function Navbar() {
         </Link>
       </div>
 
-      {/* Middle Section: Navigation Links */}
+{/* Middle Section: Dynamic Navigation Links */}
       <div className="hidden md:flex items-center gap-8 text-sm font-medium">
-        {/* Active Link */}
-        <Link 
-          href="/" 
-          className="text-white relative pb-1 font-bold"
-        >
-          Home
-          <span className="absolute left-0 bottom-0 w-full h-[2px] bg-[#b95734]"></span>
-        </Link>
-        
-        {/* Inactive Links */}
-        <Link 
-          href="/all-books" 
-          className="text-gray-400 hover:text-white transition-colors"
-        >
-          All Books
-        </Link>
-        <Link 
-          href="/profile" 
-          className="text-gray-400 hover:text-white transition-colors"
-        >
-          My Profile
-        </Link>
+        {navLinks.map((link) => {
+          const isActive = pathname === link.href;
+
+          return (
+            <Link
+              key={link.name}
+              href={link.href}
+              className={`transition-colors ${
+                isActive 
+                  ? "text-white relative pb-1 font-bold" 
+                  : "text-gray-400 hover:text-white"
+              }`}
+            >
+              {link.name}
+              
+              {/* Only render the orange underline if the link is active */}
+              {isActive && (
+                <span className="absolute left-0 bottom-0 w-full h-[2px] bg-[#b95734]"></span>
+              )}
+            </Link>
+          );
+        })}
       </div>
 
       {/* Right Section: User Profile & Actions */}

@@ -11,14 +11,12 @@ export default function MarqueeContent() {
   return (
     <Marquee 
       className="bg-[#050810] py-4 overflow-hidden" 
-      autoFill={true} // Helpful if using react-fast-marquee to ensure no blank spaces
+      autoFill={true}
       speed={40}
     >
       {announcements.map((text, index) => (
         <div key={index} className="flex items-center mr-12 md:mr-16">
-          {/* Orange Dot */}
           <div className="w-1.5 h-1.5 rounded-full bg-[#a84724] mr-4"></div>
-          {/* Text Content */}
           <span className="text-white text-xs md:text-sm tracking-[0.15em] uppercase font-medium">
             {text}
           </span>

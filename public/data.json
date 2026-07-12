@@ -6,7 +6,13 @@
     "description": "A gripping tale of mystery and survival in the deep woods.",
     "category": "Story",
     "available_quantity": 5,
-    "image_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&q=80&w=800"
+    "image_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&q=80&w=800",
+    "tags": ["Thriller", "Survival", "Mystery"],
+    "language": "English",
+    "pages": 312,
+    "published": "2021",
+    "rating": "4.2/5",
+    "synopsis": "When a group of hikers goes missing in the dense, uncharted territories of the Silent Forest, a seasoned local guide must confront her own dark past to find them. As the days stretch on and the elements grow harsher, she realizes they are not just fighting nature, but something far more sinister hiding among the trees."
   },
   {
     "id": 2,
@@ -15,7 +21,13 @@
     "description": "Mastering the complexities of scalable cloud-native applications.",
     "category": "Tech",
     "available_quantity": 2,
-    "image_url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800"
+    "image_url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
+    "tags": ["Programming", "Cloud", "Architecture"],
+    "language": "English",
+    "pages": 450,
+    "published": "2023",
+    "rating": "4.7/5",
+    "synopsis": "A comprehensive guide to designing and building robust, scalable cloud-native applications. This book covers everything from microservices and serverless architectures to database scaling and API design, providing practical examples and case studies from industry leaders."
   },
   {
     "id": 3,
@@ -24,7 +36,13 @@
     "description": "An accessible journey through the mind-bending world of quantum physics.",
     "category": "Science",
     "available_quantity": 8,
-    "image_url": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=800"
+    "image_url": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=800",
+    "tags": ["Physics", "Quantum Mechanics", "Non-fiction"],
+    "language": "English",
+    "pages": 288,
+    "published": "2020",
+    "rating": "4.5/5",
+    "synopsis": "Dive into the microscopic universe where the classical rules of physics break down. Dr. Sarah Miller breaks down complex concepts like entanglement, superposition, and quantum computing into digestible, engaging chapters suitable for readers with no prior physics background."
   },
   {
     "id": 4,
@@ -33,7 +51,13 @@
     "description": "Understanding the genetic blueprint that defines humanity.",
     "category": "Science",
     "available_quantity": 4,
-    "image_url": "https://covers.openlibrary.org/b/isbn/9780375415463-L.jpg"
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780375415463-L.jpg",
+    "tags": ["Genetics", "Biology", "History"],
+    "language": "English",
+    "pages": 464,
+    "published": "2003",
+    "rating": "4.3/5",
+    "synopsis": "Written by the co-discoverer of the DNA double helix, this book traces the fascinating history of genetics, from Mendel's peas to the Human Genome Project. Watson explores the profound implications of our growing understanding of DNA for medicine, agriculture, and society."
   },
   {
     "id": 5,
@@ -42,7 +66,13 @@
     "description": "Protecting digital assets in an increasingly connected world.",
     "category": "Tech",
     "available_quantity": 3,
-    "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800"
+    "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800",
+    "tags": ["Security", "Networking", "IT"],
+    "language": "English",
+    "pages": 350,
+    "published": "2022",
+    "rating": "4.6/5",
+    "synopsis": "An essential primer on protecting digital networks and data. Anya Sokolov covers modern threat landscapes, encryption protocols, risk management, and best practices for securing both enterprise systems and personal devices against increasingly sophisticated cyber attacks."
   },
   {
     "id": 6,
@@ -51,7 +81,13 @@
     "description": "A collection of ancient stories and folklore from across Asia.",
     "category": "Story",
     "available_quantity": 12,
-    "image_url": "https://covers.openlibrary.org/b/isbn/9780754800699-L.jpg"
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780754800699-L.jpg",
+    "tags": ["Folklore", "Mythology", "Asian Literature"],
+    "language": "English",
+    "pages": 256,
+    "published": "1999",
+    "rating": "4.1/5",
+    "synopsis": "A captivating anthology of myths, legends, and folktales spanning across Asian cultures. Rachel Storm beautifully retells ancient stories of gods, heroes, dragons, and spirits, offering profound insights into the spiritual and cultural heritage of the East."
   },
   {
     "id": 7,
@@ -60,7 +96,13 @@
     "description": "Deep dive into hooks, patterns, and performance optimization.",
     "category": "Tech",
     "available_quantity": 6,
-    "image_url": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80&w=800"
+    "image_url": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80&w=800",
+    "tags": ["JavaScript", "React", "Web Development"],
+    "language": "English",
+    "pages": 320,
+    "published": "2024",
+    "rating": "4.8/5",
+    "synopsis": "Move beyond the basics and master the advanced features of React. This deep dive explores custom hooks, state management patterns, concurrent rendering, and performance optimization techniques, designed for developers looking to build highly complex and performant web applications."
   },
   {
     "id": 8,
@@ -69,7 +111,13 @@
     "description": "A sci-fi classic about the colonization of Mars.",
     "category": "Science",
     "available_quantity": 10,
-    "image_url": "https://covers.openlibrary.org/b/id/12521997-L.jpg"
+    "image_url": "https://covers.openlibrary.org/b/id/12521997-L.jpg",
+    "tags": ["Science Fiction", "Classic", "Short Stories"],
+    "language": "English",
+    "pages": 288,
+    "published": "1950",
+    "rating": "4.4/5",
+    "synopsis": "Ray Bradbury's masterpiece details the human colonization of Mars and the tragic consequences for the native Martian population. Through a series of interconnected vignettes, the novel explores themes of imperialism, racism, and the destructive nature of human ambition."
   },
   {
     "id": 9,
@@ -78,7 +126,13 @@
     "description": "A masterclass on the techniques and philosophy of storytelling.",
     "category": "Story",
     "available_quantity": 4,
-    "image_url": "https://covers.openlibrary.org/b/id/14605929-L.jpg"
+    "image_url": "https://covers.openlibrary.org/b/id/14605929-L.jpg",
+    "tags": ["Writing", "Literary Criticism", "Essays"],
+    "language": "English",
+    "pages": 240,
+    "published": "1884",
+    "rating": "4.0/5",
+    "synopsis": "A seminal essay by Henry James that defends the novel as a fine art form. James argues for the freedom of the author to choose their subject and treatment, emphasizing the importance of psychological realism and organic form in creating compelling fiction."
   },
   {
     "id": 10,
@@ -87,7 +141,13 @@
     "description": "Making cloud infrastructure easy to understand and implement.",
     "category": "Tech",
     "available_quantity": 7,
-    "image_url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"
+    "image_url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800",
+    "tags": ["Cloud", "AWS", "Infrastructure"],
+    "language": "English",
+    "pages": 295,
+    "published": "2021",
+    "rating": "4.5/5",
+    "synopsis": "Demystifying the cloud for beginners and intermediate professionals. Linda Garcia provides a clear, vendor-neutral overview of cloud service models (IaaS, PaaS, SaaS), deployment strategies, and fundamental concepts like virtualization, containers, and cloud security."
   },
   {
     "id": 11,
@@ -96,7 +156,13 @@
     "description": "A quick and entertaining guide to the cosmos.",
     "category": "Science",
     "available_quantity": 15,
-    "image_url": "https://covers.openlibrary.org/b/id/12896560-L.jpg"
+    "image_url": "https://covers.openlibrary.org/b/id/12896560-L.jpg",
+    "tags": ["Astrophysics", "Space", "Science"],
+    "language": "English",
+    "pages": 224,
+    "published": "2017",
+    "rating": "4.6/5",
+    "synopsis": "Neil deGrasse Tyson brings the universe down to Earth succinctly and clearly, with sparkling wit, in digestible chapters consumable anytime and anywhere in your busy day. Explore topics from the Big Bang to black holes, quarks to quantum mechanics, and the search for planets."
   },
   {
     "id": 12,
@@ -105,6 +171,12 @@
     "description": "A magical story about following your dreams and finding your destiny.",
     "category": "Story",
     "available_quantity": 9,
-    "image_url": "https://covers.openlibrary.org/b/id/12555304-L.jpg"
+    "image_url": "https://covers.openlibrary.org/b/id/12555304-L.jpg",
+    "tags": ["Fiction", "Philosophy", "Adventure"],
+    "language": "English",
+    "pages": 208,
+    "published": "1988",
+    "rating": "4.7/5",
+    "synopsis": "The magical story of Santiago, an Andalusian shepherd boy who yearns to travel in search of a worldly treasure. His quest leads him to riches far different—and far more satisfying—than he ever imagined, teaching him about the essential wisdom of listening to his heart and following his dreams."
   }
 ]

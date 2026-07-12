@@ -5,6 +5,7 @@ import Footer from "@/components/layout/Footer";
 import Banner from "@/components/home/Banner";
 import MarqueeContent from "@/components/home/MarqueeContent";
 import FeaturedBooks from "@/components/home/FeaturedBooks.jsx";
+import CommunitySection from "@/components/home/CommunitySection";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,12 +28,9 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body>
+      <body suppressHydrationWarning>
         
         <Navbar />
-        <Banner/>
-        <MarqueeContent/>
-        <FeaturedBooks/>
         {children}
         <Footer />
         
