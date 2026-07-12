@@ -1,6 +1,6 @@
+import BorrowButton from '@/components/books/BorrowButton';
 import Image from 'next/image';
 import Link from 'next/link';
-import BorrowButton from '@/components/BorrowButton'; // Import your new client button
 
 const BookDetailsPage = async ({ params }) => {
   const { id } = await params;
