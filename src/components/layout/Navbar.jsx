@@ -2,11 +2,24 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import logo from "@/assests/bookvault_logo.png"; 
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
+import { authClient } from '@/lib/auth-client';
 
 
 export default function Navbar() {
-
+  const router = useRouter();
+  const handleLogout = async () => {
+    const { data, error } =await authClient.signOut({
+    fetchOptions: {
+    onSuccess: () => {
+      router.push("/login"); // redirect to login page
+    },
+  },
+});
+  }
+   const userData = authClient.useSession();
+   const user = userData?.data?.user;
+   console.log(user);
   const pathname = usePathname();
   const navLinks = [
     { name: 'Home', href: '/' },
@@ -61,14 +74,42 @@ export default function Navbar() {
       </div>
 
       {/* Right Section: User Profile & Actions */}
-      <div className="flex items-center gap-5">
-        <span className="text-gray-300 text-sm font-medium">
-          Hi, Alex
-        </span>
+      {!user && 
+        <div>
         <button className="bg-[#b95734] hover:bg-[#9a4729] text-white text-sm font-bold py-2 px-5 rounded-md transition-colors">
-          Logout
+          
+          <a href="/login">Login/Register</a>
         </button>
-      </div>
+      </div>}
+      {user && 
+    <div className="flex items-center gap-3">
+    <span className="text-gray-300 text-sm font-medium">
+      Hi, <strong className="text-white font-semibold tracking-wide">{user?.name}</strong>
+    </span>
+    
+    {/* Profile Image with Fallback */}
+    
+      <Image 
+        src={user?.image} 
+        width={42} 
+        height={42} 
+        alt={`${user?.name || 'User'}'s profile`}
+        className="rounded-full object-cover w-[42px] h-[42px] border-2 border-gray-600 shadow-sm"
+      />
+    
+  
+
+  <div className="hidden sm:block h-8 w-px bg-gray-700 rounded-full"></div>
+
+  <button 
+    onClick={handleLogout} 
+    className="bg-[#b95734] hover:bg-[#9a4729] active:scale-95 text-white text-sm font-bold py-2 px-5 rounded-lg transition-all duration-200 shadow-sm"
+  >
+    Logout
+  </button>
+  
+</div>
+}
       
     </nav>
   );

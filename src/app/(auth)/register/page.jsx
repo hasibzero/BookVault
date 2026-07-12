@@ -16,13 +16,13 @@ const [emailError, setEmailError] = useState("");
     const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    const profilePhoto = e.target.profilePhotoUrl.value;
+    const image = e.target.profilePhotoUrl.value;
 
     const { data, error } = await authClient.signUp.email({
         email, // user email address
         password, // user password -> min 8 characters by default
         name, // user display name
-        profilePhoto, // User image URL (optional)
+        image, // User image URL (optional)
         callbackURL:"/login"// A URL to redirect to after the user verifies their email (optional)
     });
     
