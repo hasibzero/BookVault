@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Banner from "@/components/home/Banner";
+import MarqueeContent from "@/components/home/MarqueeContent";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
         
         <Navbar />
         <Banner/>
+        <MarqueeContent/>
         {children}
         <Footer />
         
