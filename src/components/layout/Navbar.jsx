@@ -21,26 +21,28 @@ export default function Navbar() {
   const pathname = usePathname();
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'All Books', href: '/books/' },
+    { name: 'All Books', href: '/books' },
     { name: 'My Profile', href: '/profile' },
   ];
   
   return (
     <nav className="w-full flex items-center justify-between px-6 py-4 bg-[#1b2028] text-white shadow-sm">
-      
+      <Link href="/">
       <div className="flex items-center gap-3">
-        <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden">
+       
+       <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden">
           <span className="text-slate-800 text-[10px] font-extrabold leading-tight text-center">
             <Image alt='logo' src={logo} width={100} height={100}></Image>
             
           </span>
         </div>
-        <Link href="/">
+        
           <span className="text-2xl font-bold font-serif tracking-wide">
             BookVault
           </span>
-        </Link>
+        
       </div>
+      </Link>
 
       <div className="hidden md:flex items-center gap-8 text-sm font-medium">
         {navLinks.map((link) => {
