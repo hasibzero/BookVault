@@ -1,9 +1,18 @@
-
 import Image from 'next/image';
 import Link from 'next/link';
+import { redirect } from 'next/navigation';
+import { headers } from 'next/headers';
+import { auth } from '@/lib/auth';
 import BorrowButton from '@/components/books/BorrowButton';
 
 const BookDetailsPage = async ({params}) => {
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+  if (!session) {
+    redirect('/login');
+  }
+
   const { id } = await params;
   const pageId = Number(id);
   const response = await fetch('https://book-vault-hasib.vercel.app/data.json');
@@ -13,7 +22,6 @@ const BookDetailsPage = async ({params}) => {
     <div className="min-h-screen  text-black p-6 md:p-12 font-sans">
       <div className="max-w-7xl mx-auto">
         
-        {/* Back Navigation */}
         <Link 
           href="/books" 
           className="inline-flex items-center text-sm text-gray-400 hover:text-black mb-8 transition-colors"

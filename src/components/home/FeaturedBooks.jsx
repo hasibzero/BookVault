@@ -20,7 +20,7 @@ export default function FeaturedBooks() {
       try {
         const response = await fetch('https://book-vault-hasib.vercel.app/data.json');
         const data = await response.json();
-        setBooks(data);
+        setBooks(data.slice(0, 4));
       } catch (error) {
         console.error("Error fetching books:", error);
       } finally {
@@ -47,7 +47,7 @@ export default function FeaturedBooks() {
           </div>
           
           <Link 
-            href="/collection" 
+            href="/books" 
             className="text-[#a84724] hover:text-[#d35a2d] text-sm font-semibold transition-colors flex items-center gap-1"
           >
             View All 

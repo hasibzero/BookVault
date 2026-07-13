@@ -2,15 +2,28 @@
 import { authClient } from '@/lib/auth-client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { redirect } from 'next/navigation';
-import React from 'react'
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 const ProfilePage = () => {
+  const router = useRouter();
   const userData = authClient.useSession();
-     const user = userData?.data?.user;
-     if (!user) {
-      redirect('/login')
-     }
+  const user = userData?.data?.user;
+  const isLoading = userData?.isPending;
+
+  useEffect(() => {
+    if (!isLoading && !user) {
+      router.push('/login');
+    }
+  }, [user, isLoading, router]);
+
+  if (isLoading || !user) {
+    return (
+      <div className="min-h-screen bg-[#f8fafc] flex items-center justify-center">
+        <div className="w-10 h-10 border-4 border-gray-200 border-t-[#ea580c] rounded-full animate-spin" />
+      </div>
+    );
+  }
   return (
     <div className="min-h-screen bg-[#f8fafc] flex items-center justify-center p-4 font-sans">
       

@@ -18,7 +18,6 @@ export default function Navbar() {
   }
    const userData = authClient.useSession();
    const user = userData?.data?.user;
-   console.log(user);
   const pathname = usePathname();
   const navLinks = [
     { name: 'Home', href: '/' },
